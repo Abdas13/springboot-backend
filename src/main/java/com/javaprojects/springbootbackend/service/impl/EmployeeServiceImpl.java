@@ -12,21 +12,14 @@ import java.util.Optional;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
-
-
     private EmployeeRepository employeeRepository;
-
     @Autowired
     public EmployeeServiceImpl(EmployeeRepository employeeRepository) {
         this.employeeRepository = employeeRepository;
     }
-
-
-
     public Employee saveEmployee(Employee employee) {
         return employeeRepository.save(employee);
     }
-
     @Override
     public List<Employee> getAllEmployees() {
         return employeeRepository.findAll();

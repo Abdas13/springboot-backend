@@ -12,14 +12,12 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/employees")
 public class EmployeeController {
-
     private EmployeeService employeeService;
-
     public EmployeeController(EmployeeService employeeService) {
         this.employeeService = employeeService;
     }
    //build create employee REST API
-    @PostMapping
+    @PostMapping()
     public ResponseEntity<Employee> saveEmployee(@RequestBody Employee employee){
 
         return new ResponseEntity<Employee>(employeeService.saveEmployee(employee),HttpStatus.CREATED);
